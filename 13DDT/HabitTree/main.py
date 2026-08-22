@@ -31,4 +31,13 @@ class HabitTreeApp:
         self.password_var = tk.StringVar()
 
         # Tree information
+        self.tree_stages = TREE_STAGES
+        self.stage_descriptions = STAGE_DESCRIPTIONS
+
+        # Managers deal with the data and UI
+        self.habit_manager = HabitManager()
+        self.login_ui = LoginUI()
+        self.history_ui = HistoryUI()
+        self.hub_ui = HubUI()
         
+        self.show_login()
