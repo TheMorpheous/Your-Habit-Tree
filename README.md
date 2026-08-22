@@ -4,7 +4,7 @@ To track your daily habits and goals, designed to assist those who struggle with
 How to Run Program 
 1. Clone Repository and Run
 2. Ensure You have 3.x Python
-4. Code Editor Such as VS Code (What I Used)
+3. Code Editor Such as VS Code (What I Used)
 
 Features 
 - Login and Create Acc
