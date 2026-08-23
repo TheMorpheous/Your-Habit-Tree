@@ -39,5 +39,13 @@ class HabitTreeApp:
         self.login_ui = LoginUI()
         self.history_ui = HistoryUI()
         self.hub_ui = HubUI()
-        
+
         self.show_login()
+
+
+    # Gui helpers
+    def clear_screen(self):
+        # Removes the current window
+
+
+     

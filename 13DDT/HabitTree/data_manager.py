@@ -16,16 +16,16 @@ def hash_password(password):
         return[]
 
 
-def load_save():
+def load_data():
     # Loads the saved data for user
     if not os.path.exists(DATA_FILE):
-        return[]
+        return{}
 
     try:
         with open(DATA_FILE, "r", encoding="utf-8") as file:
             return json.load(file)
     except (json.JSONDecodeError, OSError):
-        return[] # Start safey if save file is unnreadable
+        return{} # Start safey if save file is unnreadable
 
 
 def save_data(data):
