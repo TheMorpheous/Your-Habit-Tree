@@ -23,7 +23,7 @@ def load_save():
 
     try:
         with open(DATA_FILE, "r", encoding="utf-8") as file:
-            return jon.load(file)
+            return json.load(file)
     except (json.JSONDecodeError, OSError):
         return[] # Start safey if save file is unnreadable
 
