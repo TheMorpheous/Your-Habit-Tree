@@ -8,14 +8,14 @@ class HabitManager:
     def __init__(self, app):
         self.app = app
 
-        def check_daily_status(self):
-            # Makes sure the user reults for the day are saved
-            user = self.app.data[self.app.current_user]
-            today = str(date.today())
+    def check_daily_status(self):
+        # Makes sure the user reults for the day are saved
+        user = self.app.data[self.app.current_user]
+        today = str(date.today())
 
-            if today not in user["history"]:
-                user["history"][today] = "not_logged"
-                save_data(self.app.data)
+        if today not in user["history"]:
+            user["history"][today] = "not_logged"
+            save_data(self.app.data)
 
     def log_habit(self, completed):
         # Records the day result and advace the tree foward or backward (cant be logged twice "hopefully")
@@ -30,10 +30,17 @@ class HabitManager:
             return
 
         if completed:
-            user["hitory"][today] = "complete"
+            user["history"][today] = "complete"
 
             # Minimum and Maximum Stages
-            self.app.stage = min(self.app.stage + 1, len(self.app.tree_stages) - 1)
+            self.app.stage = min(
+                self.app.stage + 1,
+                len(self.app.tree_stages) - 1
+            )
+
+            # Save the new stage to the user's data
+            user["stage"] = self.app.stage
+
             user["total_completed"] += 1
 
             streak = self.calculate_streak()

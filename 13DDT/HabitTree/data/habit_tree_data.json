@@ -1,0 +1,56 @@
+{
+    "Caleb": {
+        "password": null,
+        "stage": 0,
+        "history": {
+            "2026-08-23": "complete"
+        },
+        "longest_streak": 1,
+        "total_completed": 1
+    },
+    "Trial 1": {
+        "password": null,
+        "stage": 1,
+        "history": {
+            "2026-08-23": "complete"
+        },
+        "longest_streak": 1,
+        "total_completed": 1
+    },
+    "Trial 2": {
+        "password": null,
+        "stage": 1,
+        "history": {
+            "2026-08-23": "complete"
+        },
+        "longest_streak": 1,
+        "total_completed": 1
+    },
+    "Trial 3": {
+        "password": null,
+        "stage": 0,
+        "history": {
+            "2026-08-23": "not_logged"
+        },
+        "longest_streak": 0,
+        "total_completed": 0
+    },
+    "Trial 4": {
+        "password": null,
+        "stage": 1,
+        "history": {
+            "2026-08-23": "complete"
+        },
+        "longest_streak": 1,
+        "total_completed": 1
+    },
+    "Trial 5": {
+        "password": null,
+        "stage": 0,
+        "history": {
+            "2026-08-23": "missed"
+        },
+        "longest_streak": 0,
+        "total_completed": 0
+    }
+}

@@ -38,7 +38,7 @@ class HistoryUI:
         )
         list_frame.pack(fill="both", expand=True, padx=80, pady=10)
 
-        text = tk.text(
+        text = tk.Text(
             list_frame,
             font=("consolas", 11),
             bg="white",
@@ -58,7 +58,7 @@ class HistoryUI:
             for day in sorted_days[:30]:
                 status = history[day]
 
-                if status == "completed":
+                if status == "complete":
                     symbol = "✓"
                     word = "Completed"
                 elif status == "missed":

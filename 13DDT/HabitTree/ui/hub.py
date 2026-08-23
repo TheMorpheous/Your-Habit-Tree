@@ -105,7 +105,7 @@ class HubUI:
 
         tk.Label(
             tree_frame,
-            text=self.app.stage_description[stage],
+            text=self.app.stage_descriptions[stage],
             bg="white",
             fg="#596653",
             font=("Arial", 11)
@@ -172,8 +172,8 @@ class HubUI:
 
         missed_button = tk.Button(
             card,
-            "NO - NOT TODAY",
-            lambda: self.app.habit_manager.log_habit(False),
+            text="NO - NOT TODAY",
+            command=lambda: self.app.habit_manager.log_habit(False),
             width=20,
             font=("Arial", 10, "bold"),
             bg="#d8ddd6",

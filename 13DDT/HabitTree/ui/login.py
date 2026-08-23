@@ -10,7 +10,7 @@ class LoginUI:
 
     def show_login(self):
         # Displays the loginn screen for the users
-        self.app.celar_screen()
+        self.app.clear_screen()
 
         frame = tk.Frame(self.app.root, bg="#eef6ea")
         frame.pack(expand=True)

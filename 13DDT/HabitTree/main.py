@@ -16,18 +16,18 @@ class HabitTreeApp:
     def __init__(self, root):
         self.root = root
         self.root.title("Habit Tree")
-        self.root.geometry("850, 700")
-        self.root.minimize("750, 600")
+        self.root.geometry("850x700")
+        self.root.minsize(750, 600)
         self.root.configure(bg="#eef6ea")
 
         # User is loaded in once application starts
         self.data = load_data()
 
-        # Stores usernname after a successful login
+        # Stores username after a successful login
         self.current_user = None
         self.stage = 0
 
-        self.userame_var = tk.StringVar()
+        self.username_var = tk.StringVar()
         self.password_var = tk.StringVar()
 
         # Tree information
@@ -35,10 +35,10 @@ class HabitTreeApp:
         self.stage_descriptions = STAGE_DESCRIPTIONS
 
         # Managers deal with the data and UI
-        self.habit_manager = HabitManager()
-        self.login_ui = LoginUI()
-        self.history_ui = HistoryUI()
-        self.hub_ui = HubUI()
+        self.habit_manager = HabitManager(self)
+        self.login_ui = LoginUI(self)
+        self.history_ui = HistoryUI(self)
+        self.hub_ui = HubUI(self)
 
         self.show_login()
 
@@ -46,6 +46,55 @@ class HabitTreeApp:
     # Gui helpers
     def clear_screen(self):
         # Removes the current window
+        for widget in self.root.winfo_children():
+            widget.destroy()
 
+    def make_button(self, parent, text, command, width=18):
+        # Creates a consistent button for the app
+        return tk.Button(
+           parent,
+           text=text,
+           command=command,
+           width=width,
+           font=("Arial", 11, "bold"),
+           bg="#6b9f5d",
+           fg="white",
+           activebackground="#57864c",
+           activeforeground="white",
+           relief="flat",
+           padx=8,
+           pady=8,
+           cursor="hand2"
+        )
 
-     
+    def show_error(self, title, message):
+        messagebox.showerror(title, message)
+
+    def show_info(self, title, message):
+        messagebox.showinfo(title, message)
+
+    def get_today(self):
+        return str(date.today())
+
+    # Navigation
+    def show_login(self):
+        self.login_ui.show_login()
+
+    def show_hub(self):
+            self.hub_ui.show_hub()
+
+    def show_history(self):
+            self.history_ui.show_hitory()
+
+    def logout(self):
+        self.current_user = None
+        self.stage = 0
+        self.username_var.set("")
+        self.password_var.set("")
+        self.show_login()
+
+# Starting the program up
+if __name__ == "__main__":
+     root = tk.Tk()
+     app = HabitTreeApp(root)
+     root.mainloop()
