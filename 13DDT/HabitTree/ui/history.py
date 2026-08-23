@@ -14,7 +14,7 @@ class HistoryUI:
 
         user = self.app.data[self.app.current_user]
 
-        tk.label( 
+        tk.Label( 
             self.app.root,
             text="Progress History",
             bg="#eef6ea",
@@ -22,7 +22,7 @@ class HistoryUI:
             font=("Ariel", 26, "bold")
         ).pack(pady=(0, 15))
 
-        tk.label(
+        tk.Label(
             self.app.root,
             text="Your recent habit logs are saved automatically",
             bg="#eef6ea",
@@ -71,7 +71,7 @@ class HistoryUI:
                 text.insert(
                     "end",
                     f"{day:<15} {symbol} {word}\n"
-                )
+                ) # Displays whether or not a habit was completed in history 
 
         text.config(state="disabled")
 

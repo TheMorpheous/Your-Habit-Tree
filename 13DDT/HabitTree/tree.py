@@ -122,7 +122,7 @@ def draw_tree(canvas, stage):
         ]:
             canvas.create_text(
                 x, y, 
-                text="",
+                text="🌸",
                 font=("Ariel", 20),
                 fill="#f2a6bd"
             )
