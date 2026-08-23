@@ -61,14 +61,14 @@ def draw_tree(canvas, stage):
     if stage == 0:
         canvas.create_oval(
             315, top_y - 20, 340, top_y + 5,
-            fill="#4f9250"
+            fill="#4f9250", 
             outline=""
         )
 
     elif stage == 1:
         canvas.create_oval(
             275, top_y - 15, 360, top_y + 65,
-            fill="#4f9250"
+            fill="#4f9250", 
             outline=""
         )
 
@@ -79,29 +79,50 @@ def draw_tree(canvas, stage):
         canvas.create_oval(
             325 - radius, top_y - radius,
             325 + radius, top_y + radius,
-            fill="#4f9250"
+            fill="#4f9250", 
             outline=""
-        )     
+        )   
 
         canvas.create_oval(
             270 - radius // 2, top_y - 20,
             270 + radius // 2, top_y + radius + 40,
-            fill="#66a65a"
+            fill="#66a65a",
             outline=""
         )  
 
         canvas.create_oval(
             385 - radius // 2, top_y - 30,
             385 + radius // 2, top_y + radius + 35,
-            fill="#5b9e53"
+            fill="#5b9e53",
             outline=""
         ) 
 
-    #Fruit appears at final stage
+    # Fruit appears at final stage
     if stage >= 5:
         fruit_positions = [
-            ()
-            ()
-            ()
-            ()
+            (275, top_y + 30),
+            (365, top_y + 55),
+            (315, top_y - 5),
+            (405, top_y + 10)
         ]
+
+        for x, y in fruit_positions:
+            canvas.create_oval(
+                x - 7, y - 7, x + 7, y + 7,
+                fill="#d48b7c",
+                outline=""
+            )
+
+    # Flowers when fully grown
+    if stage == len(TREE_STAGES) - 1:
+        for x, y in [
+            (250, top_y + 20),
+            (390, top_y + 25),
+            (325, top_y - 20)
+        ]:
+            canvas.create_text(
+                x, y, 
+                text="",
+                font=("Ariel", 20),
+                fill="#f2a6bd"
+            )
